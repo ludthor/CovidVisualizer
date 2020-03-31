@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="m-4">
+    <h1 class="text-center m-5"> Visualizador interactivo COVID19</h1>
+    <section class="text-center">
+        <h2>Resumen global</h2>
+            <div class="d-flex justify-content-center align-items-center m-5">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="lead">Casos totales:</p>
+                            <p class="lead">{{global_data['total']}}</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                        <p class="lead">Muertes totales:</p>
+                        <p class="lead">{{global_data['muertos']}}</p>
+                    </div>
+                </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                        <p class="lead">Recuperaciones totales:</p>
+                        <p class="lead">{{global_data['recuperados']}}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+    </section>
+    <h1 class="text-center">HOY</h1>
+    <section class="text-center">
+        <h2>Seguridad y Convivencia</h2>
+        <div class="d-flex justify-content-center align-items-center m-5">
+        <div class='d-flex flex-row bd-highlight'>
+            <div class="card m-5" style="width: 18rem;">
+                <div class="card-body align-middle">
+                  <h5 class="card-title">Indicadores de convivencia</h5>
+                  <p class="card-text">Desacatos personas: {{syc_data['desa_pers']}}</p>
+                  <p class="card-text">Desacatos establecimientos: {{syc_data['desa_est']}}</p>
+                  <p class="card-text">Desacatos menores: {{syc_data['desa_men']}}</p>
+                  <p class="card-text">Violencia familiar: {{syc_data['viol_fam']}}</p>
+                  <a href="/iconv" class="btn btn-primary">Ver detalle</a>
+                </div>
+              </div>
+            <div class="card m-5" style="width: 18rem;">
+                <div class="card-body align-middle">
+                    <h5 class="card-title">Indicadores de seguridad</h5>
+                    <p class="card-text">Hurtos personas: {{syc_data['desa_pers']}}</p>
+                    <p class="card-text">Hurtos establecimientos: {{syc_data['desa_est']}}</p>
+                    <p class="card-text">Lesiones Personales: {{syc_data['desa_men']}}</p>
+                    <p class="card-text">Homicidios: {{syc_data['desa_men']}}</p>
+                    <a href="/iconv" class="btn btn-primary">Ver detalle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% endblock %}

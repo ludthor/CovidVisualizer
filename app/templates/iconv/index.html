@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="m-4">
+    <h1>Indicadores de Seguridad</h1>
+    <a href="/">Volver a inicio</a>
+    <br>
+    <br>
+    <h2>Visualización Interactiva + Tendencia</h2>
+    <div class="chart" id="bargraph">
+        <script>
+            var graphs = {{actual_plot | safe}};
+            Plotly.plot('bargraph',graphs,{});
+        </script>
+    </div>
+
+    <h2>Datos en bruto</h2>
+    <div class="table-responsive overflow-auto" style="height: 300px;">
+        {% for table in tables %}
+                {{titles[loop.index]}}
+                {{ table|safe }}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
